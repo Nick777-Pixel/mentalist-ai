@@ -16,7 +16,7 @@ export const generateContentIdeas = async ({
 	topic,
 	context,
 	token,
-	model = 'text-davinci-003',
+	model = 'gpt-4o',
 	accurateFor,
 	type,
 }: GenerateContentIdeasProps) => {
@@ -37,9 +37,9 @@ export const generateContentIdeas = async ({
 					content: prompt,
 				},
 			],
-			max_tokens: 180,
+			max_tokens: 500,
 			temperature: 0.5,
-			top_p: 1,
+			top_p: 0.9,
 			frequency_penalty: 0,
 			presence_penalty: 0,
 		});
