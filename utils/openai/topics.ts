@@ -1,7 +1,7 @@
 import { AvailableModel } from '../constants/openai';
 import { getClient } from './client';
 
-const CHAT_GPT_MODEL: AvailableModel = 'gpt-3.5-turbo';
+const CHAT_GPT_MODEL: AvailableModel = 'gpt-4';
 
 interface GenerateContentIdeasProps {
 	topic: string;
@@ -49,9 +49,9 @@ export const generateContentIdeas = async ({
 		const completion = await getClient(token).createCompletion({
 			model,
 			prompt,
-			max_tokens: 180,
+			max_tokens: 500,
 			temperature: 0.5,
-			top_p: 1,
+			top_p: 0.9,
 			frequency_penalty: 0,
 			presence_penalty: 0,
 		});
